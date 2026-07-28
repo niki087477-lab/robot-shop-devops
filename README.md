@@ -107,22 +107,28 @@ To enable Website Monioring / End-User Monitoring (EUM) see the official [docume
 
 The Helm chart for installing Stan's Robot Shop supports setting the key and endpoint url required for website monitoring, see the [README](K8s/helm/README.md).
 
-## Prometheus
+# 📸 Application Screenshots
 
-The cart and payment services both have Prometheus metric endpoints. These are accessible on `/metrics`. The cart service provides:
+The following screenshots demonstrate the successful deployment of the Robot Shop microservices application on **Amazon EKS**. The application is exposed using an **AWS Application Load Balancer (ALB)** and all services communicate within the Kubernetes cluster.
 
-* Counter of the number of items added to the cart
+---
 
-The payment services provides:
+## 🏠 Robot Shop Home Page
 
-* Counter of the number of items perchased
-* Histogram of the total number of items in each cart
-* Histogram of the total value of each cart
+<p align="center">
+  <img src="screenshots/robot-shop-home.png" alt="Robot Shop Home Page" width="900">
+</p>
 
-To test the metrics use:
+This screenshot shows the Robot Shop application successfully running on an **Amazon EKS cluster** and accessible through the **AWS Application Load Balancer (ALB)**.
 
-```shell
-$ curl http://<host>:8080/api/cart/metrics
-$ curl http://<host>:8080/api/payment/metrics
-```
+---
 
+## 🤖 Product Details Page
+
+<p align="center">
+  <img src="screenshots/robot-shop-product.png" alt="Robot Shop Product Page" width="900">
+</p>
+
+This screenshot demonstrates successful navigation within the application, confirming that the frontend, backend microservices, and databases are functioning correctly inside the Kubernetes cluster.
+
+---
